@@ -6,12 +6,25 @@ This script converts a spread sheet file containing Author-Affiliations to LaTeX
 
 Some journals need a specific Author Affiliation format, which is based on LaTeX package `authblk`. But sometimes it is easier to manage the affiliations of a large collaboration using a spreadsheet file, like in [LibreOffice](https://www.libreoffice.org/). After you set the order of the appearance of the authors, then you can feed the ODS file to the script. It will automatically generate the LaTeX header. 
 
-## Usage example:
-Type:
+## Installation
+
+You can directly use the app:
 
 ```
-python3 affiliator.py coauthor_list.ods
+python3 -m affiliator coauthor_list.ods
 ```
+
+or first install it by:
+
+```
+pip install -r requirements.txt
+pip install .
+```
+
+Uninstalling is similarly using `pip`.
+
+
+## Example:
 
 For example an ODS file containing this information:
 
