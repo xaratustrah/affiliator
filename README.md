@@ -28,10 +28,11 @@ Uninstalling is similarly using `pip`.
 
 For example an ODS file containing this information:
 
-| First      | First Abb. | Last     | Email                        | ORCID               | 1. Afiiliation  | 2. Affiliation  | 3. Affiliation     | 4. Affiliation                       |
-|------------|------------|----------|------------------------------|---------------------|-----------------|-----------------|--------------------|--------------------------------------|
-| Eva Lilith | E. L.      | Cielo    | elcielo@example.edu          | 0000-0123-4567-8910 | City University | College of Arts | Another University | University of Antarctica             |
-| Eva Maria  | E. M.      | Cemballo | elcielo@example.edumcemballo | 0000-0123-4567-8910 | City University | Penn State      | Another University | Japan University of Natural Sciences |
+
+| First      | First Abb. | Last     | Email                       | ORCID               | 1st Affiliation | 2nd Affiliation | 3rd Affiliation    | 4th Affiliation                      |
+|------------|------------|----------|-----------------------------|---------------------|-----------------|-----------------|--------------------|--------------------------------------|
+| Eva Lilith | E. L.      | Cielo    | elcielo@example.edu         | 0000-0123-4567-8910 | City University | College of Arts | Another University | University of Antarctica             |
+| Eva Maria  | E. M.      | Cemballo | elcielo@example.another.edu | 0000-0123-4567-8910 | City University | Penn State      | Another University | Japan University of Natural Sciences |
 
 
 will render to:
@@ -48,3 +49,5 @@ will render to:
 ```
 
 As long as the script knows on which column the affiliations start, all affiliations are considered. This can be set in the code.
+
+Here is a link to the [exampmle file](https://github.com/xaratustrah/affiliator/blob/main/rsrc/test.ods).
