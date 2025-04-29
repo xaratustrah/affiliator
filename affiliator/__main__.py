@@ -3,7 +3,7 @@
 
 """
 Convert a spread sheet file containing Author-Affiliations to LaTeX header for use with package authblk
-It also prints out the EPJ format
+It also prints out the EPJ and arXiv formats
 
 2023/2024 xaratustrah
 """
