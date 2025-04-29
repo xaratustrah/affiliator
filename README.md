@@ -1,6 +1,37 @@
 # affiliator
 
-This script converts a spread sheet file containing Author-Affiliations to LaTeX header for use with package `authblk`. This might be needed for submission to some journals.
+This script converts a spread sheet file containing Author-Affiliations to LaTeX header for use with package `authblk`. This might be needed for submission to some journals. Two additional Journal formats are also supported, the EPJ format.
+
+authblock format renders the list to this output:
+
+```
+\author[1]{Author One}
+\author[1,2]{Author Two}
+\author[2]{Author Three}
+\affil[1]{Affiliation1}
+\affil[2]{Affiliation2}
+```
+
+The EPJ format:
+
+```
+\author{
+Author One\inst{1} \and
+Author Two\inst{1, 2} \and
+Author Three\inst{2}
+}
+\institute{
+Affiliation1 \and
+Affiliation2
+}
+```
+
+The arXiv format:
+
+```
+Author One (1), Author Two (1 and 2), Author Three (2)
+((1) Affiliation1, (2) Affiliation2)
+```
 
 ## Motivation
 
