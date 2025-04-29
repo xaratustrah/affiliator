@@ -30,18 +30,18 @@ def process_tables(data):
             affs_clean.append(aff)
 
 
-    final_affiliations_list = []
+    final_affiliations_list_authblk = []
     final_affiliations_list_epj = []
     
     i = 1
     for aff in affs_clean:
-        final_affiliations_list.append(f'\\affil[{i}]{{{aff}}}')
+        final_affiliations_list_authblk.append(f'\\affil[{i}]{{{aff}}}')
         final_affiliations_list_epj.append(f'{aff}')
         i+= 1
 
     # now deal with author names
 
-    final_authors_list = []
+    final_authors_list_authblk = []
     final_authors_list_epj = []
 
     for row in data['Sheet1'][1:]:
@@ -60,29 +60,29 @@ def process_tables(data):
         # add tilda for LaTeX
         name = re.sub(r"\s+", '~', name)
         
-        final_authors_list.append(f'\\author{aff_idx}{{{name}}}')
+        final_authors_list_authblk.append(f'\\author{aff_idx}{{{name}}}')
                
         final_authors_list_epj.append(f'{name}\\inst{{{", ".join(map(str, aff_idx))}}}')
     
-    return final_authors_list, final_affiliations_list, final_authors_list_epj, final_affiliations_list_epj
+    return final_authors_list_authblk, final_affiliations_list_authblk, final_authors_list_epj, final_affiliations_list_epj
 
 
 def main():
     filename = sys.argv[1]
     data = get_data(filename)
-    final_authors_list, final_affiliations_list, final_authors_list_epj, final_affiliations_list_epj = process_tables(data)
+    final_authors_list_authblk, final_affiliations_list_authblk, final_authors_list_epj, final_affiliations_list_epj = process_tables(data)
 
     print('\n\nauthblk format: \n\n')
     
-    print("\n".join(final_authors_list), '\n', "\n".join(final_affiliations_list))
+    print("\n".join(final_authors_list_authblk), '\n', "\n".join(final_affiliations_list_authblk))
     
     print('\n\nEPJ format: \n\n')
         
     print("\\author{\n", " \\and\n".join(final_authors_list_epj), '\n}')
     
     print("\institute{\n", " \\and\n".join(final_affiliations_list_epj), "\n}\n")
-    
-    
+
+   
 
 # ------------------------
 if __name__ == '__main__':    
